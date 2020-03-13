@@ -1,0 +1,37 @@
+<div class="field">
+  <label class="label">{{ label }}</label>
+  <div class="control">
+    <input
+      class="input"
+      [placeholder]="placeholderContent"
+      [formControl]="control"
+      [ngClass]="{
+        'is-danger': showErrors()
+      }"
+    />
+    <ng-container *ngIf="showErrors()">
+      <div class="help is-danger" *ngIf="showErrors()">
+        Value Required
+      </div>
+      <div class="help is-danger" *ngIf="control.errors.minlength">
+        Too short, still need
+        {{
+          control.errors.minlength.requiredLength -
+            control.errors.minlength.actualLength
+        }}
+        characters
+      </div>
+      <div class="help is-danger" *ngIf="control.errors.maxlength">
+        Too long, remove
+        {{
+          control.errors.maxlength.actualLength -
+            control.errors.maxlength.requiredLength
+        }}
+        characters.
+      </div>
+      <div class="help is-danger" *ngIf="control.errors.pattern">
+        Inavlid pattern.
+      </div>
+    </ng-container>
+  </div>
+</div>
