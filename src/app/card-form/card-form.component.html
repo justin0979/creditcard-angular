@@ -7,21 +7,21 @@
   <app-input
     label="Card Number"
     [control]="cardForm.get('cardNumber')"
-    placeholderContent="xxxx-xxxx-xxxx-xxxx"
+    placeholderContent="####-####-####-####"
   ></app-input>
   <div class="columns">
     <div class="column">
       <app-input
         label="Expiration"
         [control]="cardForm.get('cardExpiration')"
-        placeholderContent="MM/YY"
+        placeholderContent="MM/YY (e.g. May 2022 is 05/22)"
       ></app-input>
     </div>
     <div class="column">
       <app-input
         label="Security Code"
         [control]="cardForm.get('cardSecurityCode')"
-        placeholderContent="xxx"
+        placeholderContent="###"
       ></app-input>
     </div>
   </div>
