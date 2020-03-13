@@ -19,8 +19,19 @@
     [control]="cardForm.get('cardSecurityCode')"
     placeholderContent="xxx"
   ></app-input>
-  <button [disabled]="cardForm.invalid" class="button is-primary">
+  <button
+    [disabled]="cardForm.invalid"
+    class="button is-primary"
+    type="submit"
+  >
     Submit
+  </button>
+  <button
+    class="button is-warning"
+    type="button"
+    (click)="onClickReset()"
+  >
+    Reset
   </button>
 </form>
 
