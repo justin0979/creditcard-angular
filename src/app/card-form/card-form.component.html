@@ -9,30 +9,38 @@
     [control]="cardForm.get('cardNumber')"
     placeholderContent="xxxx-xxxx-xxxx-xxxx"
   ></app-input>
-  <app-input
-    label="Expiration"
-    [control]="cardForm.get('cardExpiration')"
-    placeholderContent="MM/YY"
-  ></app-input>
-  <app-input
-    label="Security Code"
-    [control]="cardForm.get('cardSecurityCode')"
-    placeholderContent="xxx"
-  ></app-input>
-  <button
-    [disabled]="cardForm.invalid"
-    class="button is-primary"
-    type="submit"
-  >
-    Submit
-  </button>
-  <button
-    class="button is-warning"
-    type="button"
-    (click)="onClickReset()"
-  >
-    Reset
-  </button>
+  <div class="columns">
+    <div class="column">
+      <app-input
+        label="Expiration"
+        [control]="cardForm.get('cardExpiration')"
+        placeholderContent="MM/YY"
+      ></app-input>
+    </div>
+    <div class="column">
+      <app-input
+        label="Security Code"
+        [control]="cardForm.get('cardSecurityCode')"
+        placeholderContent="xxx"
+      ></app-input>
+    </div>
+  </div>
+  <div class="buttons">
+    <button
+      [disabled]="cardForm.invalid"
+      class="button is-primary"
+      type="submit"
+    >
+      Submit
+    </button>
+    <button
+      class="button is-warning"
+      type="button"
+      (click)="onClickReset()"
+    >
+      Reset
+    </button>
+  </div>
 </form>
 
 <hr />
